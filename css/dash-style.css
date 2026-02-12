@@ -1,0 +1,425 @@
+:root {
+    --bg-color: #f3f0e8;
+    /* Beige background */
+    --sidebar-bg: rgb(26, 26, 27);
+    /* Dark Green */
+    --text-dark: #333;
+    --text-light: #fff;
+    --card-bg: #ffffff;
+    --accent-green: #d1e7dd;
+    --accent-beige: #f0e6d2;
+    --btn-dark: rgb(26, 26, 27);
+    --dot-color: #a3cfbb;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    --border-radius: 20px;
+    --font-family: 'Poppins', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-color);
+    color: var(--text-dark);
+    height: 100vh;
+    overflow: hidden;
+    /* Full screen app feel */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 80px;
+    background-color: var(--sidebar-bg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    border-radius: 15px;
+    margin: 10px 0 10px 10px;
+    /* Floating sidebar look per image */
+    height: calc(100% - 20px);
+}
+
+.logo {
+    color: var(--accent-green);
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex: 1;
+}
+
+.nav-item {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 20px;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    color: #fff;
+}
+
+.logout {
+    margin-bottom: 30px;
+}
+
+.profile-mini img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid white;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 20px 40px;
+    overflow-y: auto;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-about {
+    background-color: var(--btn-dark);
+    color: white;
+    padding: 8px 20px;
+    border-radius: 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+/* Dashboard Grid */
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 30px;
+    height: calc(100% - 70px);
+}
+
+/* Cards Generic */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--border-radius);
+    padding: 20px;
+    box-shadow: var(--shadow);
+}
+
+/* Inputs Section */
+.input-section {
+    display: flex;
+    flex-direction: column;
+    width:400px;
+}
+
+.input-section h2 {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.input-section p{
+    font-size: 12px;
+}
+
+
+.input-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.input-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    background-color: #a4ce68;
+    /* Light green dot */
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    outline: none;
+    background: #fff;
+}
+
+.btn-run {
+    background-color: var(--btn-dark);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+/* Right Column */
+.right-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left:50px;
+}
+
+.see-all {
+    color: #999;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+/* Tasks Grid */
+.tasks-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Task column - Calendar column */
+    gap: 20px;
+}
+
+.task-column {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: relative;
+    left: 50px;
+}
+
+.task-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+}
+
+.task-card.green-accent {
+    background-color: #e8f5e9;
+    width:570px;
+}
+
+.task-card.beige-accent {
+    background-color: #fff3e0;
+}
+
+.task-icon {
+    font-size: 24px;
+    color: #444;
+}
+
+
+
+.task-info h4 {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.task-info p{
+    font-size: 12px;
+}
+
+.btn-run-small {
+    background-color: var(--btn-dark);
+    color: white;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+/* Calendar */
+.calendar-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 68px;
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.calendar-nav i {
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 12px;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    text-align: center;
+    font-size: 12px;
+    gap: 5px;
+}
+
+.calendar-day-header {
+    color: #999;
+    font-size: 10px;
+}
+
+.calendar-day {
+    padding: 5px;
+    border-radius: 50%;
+}
+
+.calendar-day.active {
+    background-color: #a4ce68;
+    color: white;
+}
+
+.time-display {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444;
+    background: #f1f1f1;
+    padding: 8px;
+    border-radius: 8px;
+}
+
+/* Fields Grid */
+.fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    /* smaller weather, larger graph */
+    gap: 20px;
+    flex: 1;
+}
+
+/* Weather */
+.weather-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left:50px;
+    
+    background-color:rgb(224 247 205) ;
+}
+
+.weather-main {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.weather-icon-large {
+    font-size: 40px;
+}
+
+.temp-display {
+    font-size: 32px;
+    font-weight: 600;
+}
+
+.weather-details {
+    display: flex;
+    gap: 15px;
+    font-size: 12px;
+    color: #666;
+}
+
+.location-select {
+    display: flex;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 8px;
+    padding: 5px 10px;
+    margin-top: 10px;
+}
+
+.location-select select {
+    border: none;
+    outline: none;
+    width: 100%;
+    background: transparent;
+    font-size: 12px;
+}
+
+/* Graph */
+.graph-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 370px;
+}
+
+.chart-container {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    min-height: 0;
+}
+
+/* Footer */
+.footerclass {
+    text-align: center;
+    padding: 20px;
+    font-size: 12px;
+    color: #666;
+    background-color: var(--bg-color);
+    margin-top: 20px;
+}
+.final{
+    margin-top:250px;
+    
+}

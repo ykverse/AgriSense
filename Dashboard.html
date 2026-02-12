@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="css/dash-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-leaf"></i>
+            </div>
+            <nav class="nav-menu">
+                <a href="#" title="Home" class="nav-item"><i class="fa-solid fa-house"></i></a>
+                <a href="#" title="Dashboard" class="nav-item active"><i class="fa-solid fa-window-restore"></i></a>
+                <a href="#" title="Result" class="nav-item"><i class="fa-solid fa-square-poll-horizontal"></i></a>
+
+            </nav>
+            <div class="logout">
+                <a href="#" class="nav-item"><i class="fa-solid fa-right-from-bracket"></i></a>
+            </div>
+            <div class="profile-mini">
+                <img src="icons/farm-dp.png" alt="Profile">
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <h1>Dashboard</h1>
+                <div class="header-right">
+                    <button class="btn-about">About</button>
+                    <div class="profile-header">
+                        <img src="icons/farm-dp.png" alt="Profile">
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Grid -->
+            <div class="dashboard-grid">
+                <!-- Left Column: Inputs -->
+                <section class="card input-section">
+                    <h2>Crop Recommendation Inputs</h2><br>
+                    <form class="input-grid">
+                        <div class="input-group">
+                            <label><span class="dot"></span> N</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> P</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> K</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> Temperature</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> Humidity</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> pH</label>
+                            <input type="text" placeholder="pH">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> Soil Type</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                        <div class="input-group">
+                            <label><span class="dot"></span> Rainfall</label>
+                            <input type="text" placeholder="Input">
+                        </div>
+                    </form>
+                    <button class="btn-run full-width">Run</button><br><br>
+
+<p>
+ 
+    <b>Nitrogen (N):</b> Helps plants grow strong and green. It affects leaf and stem growth.<br>
+
+<b>Phosphorus (P):</b> Supports root development and helps crops mature properly.<br>
+
+<b>Potassium (K):</b>Improves plant health, disease resistance, and overall crop quality.<br>
+
+<b>pH Level:</b> Shows how acidic or alkaline the soil is. Different crops grow better in different pH ranges.<br>
+
+<b>Rainfall:</b> The amount of water your field receives. It affects how well crops can grow.<br>
+
+<b>Temperature:</b> The heat level in your area. Some crops prefer cool climates, others need warmer conditions.<br>
+
+<b>Humidity:</b> The moisture in the air. It influences plant growth and disease risk.<br>
+
+
+
+
+
+
+
+</p>
+
+
+
+
+                </section>
+
+                <!-- Right Column: Tasks & Fields -->
+                <div class="right-column">
+                    <!-- Upcoming Tasks Section -->
+                    <div class="section-header">
+                        <h3>About Models</h3>
+                        <a href="#" class="see-all">See all</a>
+                    </div>
+
+                    <div class="tasks-grid">
+                        <div class="task-column">
+                            <div class="card task-card green-accent">
+                                <div class="task-icon"><i class="fa-solid fa-seedling"></i></div>
+                                <div class="task-info">
+                                    <h4>Crop Recommendation: Random Forest</h4>
+                                    <p>
+                                        <b>Inputs:</b> Soil nutrients (N, P, K), pH, rainfall, temperature, humidity.<br>
+                                        <b> What it does:</b> Matches your soil and climate with the most suitable crops.<br>
+                                        <b>Trained on</b>: Crop–soil data showing which crops grow best in different conditions.<br><br>
+                                    </p>
+                                    <button class="btn-run-small">Learn More</button>
+                                </div>
+                            </div>
+                            <div class="card task-card beige-accent">
+                                <div class="task-icon"><i class="fa-duotone fa-solid fa-indian-rupee-sign"></i></div>
+                                <div class="task-info">
+                                    <h4>Price Prediction</h4>
+
+                                      <p>
+                                       <b>What it does:</b> Shows price trends and predicts how the market may change.<br>
+                                        <b>Trained on:</b> Multi-year price records (2020–2025) to learn seasonal patterns.<br><br>
+
+                                      </p>
+                                    <button class="btn-run-small">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Calendar -->
+                        <div class="card calendar-card">
+                            <div class="calendar-header">
+                                <span id="current-month-year">May 2023</span>
+                                <div class="calendar-nav">
+                                    <i class="fa-solid fa-chevron-left" id="prev-month"></i>
+                                    <i class="fa-solid fa-chevron-right" id="next-month"></i>
+                                </div>
+                            </div>
+                            <div class="calendar-grid" id="calendar-days">
+                                <!-- Days injected by JS -->
+                            </div>
+                            <div class="time-display" id="clock">12:00 PM</div>
+                        </div>
+                    </div>
+
+                    <!-- Fields Section -->
+                    <div class="section-header">
+                        <h3>Fields</h3>
+                        <div class="nav-arrows">
+                            <i class="fa-solid fa-chevron-left"></i>
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </div>
+                    </div>
+
+                    <div class="fields-grid">
+                        <!-- Weather Card -->
+                        <div class="card weather-card">
+                            <h3>Current Weather</h3>
+                            <div class="weather-main">
+                                <i class="fa-solid fa-cloud-sun weather-icon-large"></i>
+                                <div class="temp-display">24°C</div>
+                            </div>
+                            <div class="weather-details">
+                                <span><i class="fa-solid fa-wind"></i> 16 km/h</span>
+                                <span><i class="fa-solid fa-droplet"></i> 44%</span>
+                            </div>
+                            <div class="location-select">
+                                <select id="district-select">
+                                    <option value="" disabled selected>Select location</option>
+                                    <!-- Options injected by JS -->
+                                </select>
+                                <i class="fa-solid fa-map"></i>
+                            </div>
+                        </div>
+
+                        <!-- Price Graph Card -->
+                        <div class="card graph-card">
+                            <h3>Price Graph (Per Quintal)</h3><br>
+                            <div class="chart-container">
+                                <canvas id="priceChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="final">
+    <div class="footerclass">
+        <p>Copyright © 2025 All rights reserved <br>made by yk
+
+            
+        </p>
+    </div>
+    </div>
+
+            
+    </div>
+
+
+
+    
+    </main>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+
+</html>
