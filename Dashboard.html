@@ -78,37 +78,42 @@
                             <label><span class="dot"></span> pH</label>
                             <input type="text" placeholder="pH">
                         </div>
-                       
+
                         <div class="input-group">
-                            <label><span class="dot"></span> Rainfall</label>
-                            <input type="text" placeholder="Input">
+                            <div class="select">
+                                <label><span class="dot"></span> Rainfall</label>
+                                <input type="text" placeholder="Input">
+                            </div>
                         </div>
                     </form>
                     <button class="btn-run full-width">Run</button><br><br>
 
-<p>
- 
-    <b>Nitrogen (N):</b> Helps plants grow strong and green. It affects leaf and stem growth.<br>
+                    <p>
 
-<b>Phosphorus (P):</b> Supports root development and helps crops mature properly.<br>
+                        <b>Nitrogen (N):</b> Helps plants grow strong and green. It affects leaf and stem growth.<br>
 
-<b>Potassium (K):</b>Improves plant health, disease resistance, and overall crop quality.<br>
+                        <b>Phosphorus (P):</b> Supports root development and helps crops mature properly.<br>
 
-<b>pH Level:</b> Shows how acidic or alkaline the soil is. Different crops grow better in different pH ranges.<br>
+                        <b>Potassium (K):</b>Improves plant health, disease resistance, and overall crop quality.<br>
 
-<b>Rainfall:</b> The amount of water your field receives. It affects how well crops can grow.<br>
+                        <b>pH Level:</b> Shows how acidic or alkaline the soil is. Different crops grow better in
+                        different pH ranges.<br>
 
-<b>Temperature:</b> The heat level in your area. Some crops prefer cool climates, others need warmer conditions.<br>
+                        <b>Rainfall:</b> The amount of water your field receives. It affects how well crops can
+                        grow.<br>
 
-<b>Humidity:</b> The moisture in the air. It influences plant growth and disease risk.<br>
+                        <b>Temperature:</b> The heat level in your area. Some crops prefer cool climates, others need
+                        warmer conditions.<br>
 
-
-
-
-
+                        <b>Humidity:</b> The moisture in the air. It influences plant growth and disease risk.<br>
 
 
-</p>
+
+
+
+
+
+                    </p>
 
 
 
@@ -130,9 +135,12 @@
                                 <div class="task-info">
                                     <h4>Crop Recommendation: Random Forest</h4>
                                     <p>
-                                        <b>Inputs:</b> Soil nutrients (N, P, K), pH, rainfall, temperature, humidity.<br>
-                                        <b> What it does:</b> Matches your soil and climate with the most suitable crops.<br>
-                                        <b>Trained on</b>: Crop–soil data showing which crops grow best in different conditions.<br><br>
+                                        <b>Inputs:</b> Soil nutrients (N, P, K), pH, rainfall, temperature,
+                                        humidity.<br>
+                                        <b> What it does:</b> Matches your soil and climate with the most suitable
+                                        crops.<br>
+                                        <b>Trained on</b>: Crop–soil data showing which crops grow best in different
+                                        conditions.<br><br>
                                     </p>
                                     <button class="btn-run-small">Learn More</button>
                                 </div>
@@ -142,11 +150,13 @@
                                 <div class="task-info">
                                     <h4>Price Prediction</h4>
 
-                                      <p>
-                                       <b>What it does:</b> Shows price trends and predicts how the market may change.<br>
-                                        <b>Trained on:</b> Multi-year price records (2020–2025) to learn seasonal patterns.<br><br>
+                                    <p>
+                                        <b>What it does:</b> Shows price trends and predicts how the market may
+                                        change.<br>
+                                        <b>Trained on:</b> Multi-year price records (2020–2025) to learn seasonal
+                                        patterns.<br><br>
 
-                                      </p>
+                                    </p>
                                     <button class="btn-run-small">Learn More</button>
                                 </div>
                             </div>
@@ -212,21 +222,120 @@
 
 
             <div class="final">
-    <div class="footerclass">
-        <p>Copyright © 2025 All rights reserved <br>made by yk
+                <div class="footerclass">
+                    <p>Copyright © 2025 All rights reserved <br>made by yk
 
-            
-        </p>
+
+                    </p>
+                </div>
+            </div>
+
+
     </div>
-    </div>
-
-            
-    </div>
 
 
 
-    
+
     </main>
+    </div>
+
+    <!-- Prediction Loading Modal -->
+    <div id="predictionModal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <!-- Loading State -->
+            <div id="modalLoading" class="modal-state">
+                <div class="spinner"></div>
+                <h3>Processing Soil & Market Data</h3>
+                <p>Running Random Forest inference...</p>
+            </div>
+
+            <!-- Result State -->
+            <div id="modalResult" class="modal-state hidden" style="width: 100%;">
+                <button class="modal-close" id="closeModal"><i class="fa-solid fa-xmark"></i></button>
+                <h3>Prediction Results</h3>
+
+                <!-- Toggle Switch -->
+                <div class="toggle-container mt-15">
+                    <span class="toggle-label" id="labelSoil">Soil Match</span>
+                    <label class="switch">
+                        <input type="checkbox" id="sortToggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="toggle-label" id="labelMarket">Market Profit</span>
+                </div>
+
+                <div class="modal-body-split">
+                    <!-- Left Column: Primary Result Highlight -->
+                    <div class="modal-left-col">
+                        <div class="result-highlight improved-highlight">
+                            <img src="" alt="Crop Image" id="resultCropImage" class="crop-result-image">
+
+                            <div class="crop-details">
+                                <h2 id="resultCropName">Crop Name</h2>
+
+                                <div class="score-row">
+                                    <div class="score-pill">
+                                        <i class="fa-solid fa-bullseye"></i> <span id="resultSuitability">0%
+                                            Match</span>
+                                    </div>
+                                    <div class="trend-indicator-small" id="trendIndicator">
+                                        <i class="fa-solid fa-minus stable-icon" id="trendIcon"></i>
+                                        <span id="resultMarketPercent">0%</span>
+                                    </div>
+                                </div>
+
+                                <p class="crop-desc-text" id="resultDescription">
+                                    Loading description...
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Runner up list -->
+                    <div class="modal-right-col">
+                        <div class="runner-up-section">
+                            <h4>Other Potentials</h4>
+
+                            <div class="list-header">
+                                <span class="lh-crop">Crop</span>
+                                <span class="lh-stats">
+                                    <span>Suitability</span>
+                                    <span>Market Trend</span>
+                                </span>
+                            </div>
+
+                            <ul class="runner-up-list" id="runnerUpList">
+                                <!-- Javascript will inject list items here -->
+                            </ul>
+
+                            <!-- Explanatory Text -->
+                            <div class="info-box">
+                                <strong>Suitability Match %:</strong> How well the crop suits your soil analysis.<br>
+                                <strong>Market Trend:</strong> The projected price trajectory.<br>
+                                <strong>Suitability Score:</strong> The calculated Market Profit adjusted ranking.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="btn-run full-width mt-15" id="btnAcknowledge"
+                    style="max-width: 400px; margin-top: 25px;">Close</button>
+            </div>
+
+            <!-- Error State -->
+            <div id="modalError" class="modal-state hidden">
+                <button class="modal-close" id="closeErrorModal"><i class="fa-solid fa-xmark"></i></button>
+                <div class="crop-icon-wrapper error-icon mt-15">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+                <h3 class="mt-15">Validation Failed</h3>
+                <p class="result-description mt-15" id="errorDescription" style="color: #dc3545; font-weight: 500;">
+                    Please check your inputs and try again.
+                </p>
+                <button class="btn-run full-width mt-15" id="btnAcknowledgeError"
+                    style="background-color: #dc3545;">Dismiss</button>
+            </div>
+        </div>
     </div>
 
     <script src="script/script.js"></script>
