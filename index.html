@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard</title>
+    <title>AgriSense</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <!-- Font Awesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="icons/farm-dp.png" type="image/x-icon">
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link rel="stylesheet" href="css/style.css">
@@ -39,11 +40,11 @@
         <main class="main-content">
             <!-- Header -->
             <header class="header">
-                <h1>Dashboard</h1>
+                <h1>AgriSense</h1>
                 <div class="header-right">
-                    <button class="btn-about">About</button>
+                    
                     <div class="profile-header">
-                        <img src="icons/farm-dp.png" alt="Profile">
+                        
                     </div>
                 </div>
             </header>
@@ -54,38 +55,39 @@
                 <section class="card input-section">
                     <h2>Crop Recommendation Inputs</h2><br>
                     <form class="input-grid">
-                        <div class="input-group">
-                            <label><span class="dot"></span> N</label>
-                            <input type="text" placeholder="Input">
-                        </div>
-                        <div class="input-group">
-                            <label><span class="dot"></span> P</label>
-                            <input type="text" placeholder="Input">
-                        </div>
-                        <div class="input-group">
-                            <label><span class="dot"></span> K</label>
-                            <input type="text" placeholder="Input">
-                        </div>
-                        <div class="input-group">
-                            <label><span class="dot"></span> Temperature</label>
-                            <input type="text" placeholder="Input">
-                        </div>
-                        <div class="input-group">
-                            <label><span class="dot"></span> Humidity</label>
-                            <input type="text" placeholder="Input">
-                        </div>
-                        <div class="input-group">
-                            <label><span class="dot"></span> pH</label>
-                            <input type="text" placeholder="pH">
-                        </div>
+              <div class="input-group">
+          <label><span class="dot"></span> N </label>
+         <input type="text" placeholder="Input range: (0-200)">
+                </div>
+                <div class="input-group">
+                       <label><span class="dot"></span> P </label>
+                  <input type="text" placeholder="Input range: (0-200)">
+             </div>
+                    <div class="input-group">
+                     <label><span class="dot"></span> K </label>
+                    <input type="text" placeholder="Input range: (0-200)">
+                    </div>
+                    <div class="input-group">
+                    <label><span class="dot"></span> Temperature </label>
+                 <input type="text" placeholder="Input range: (5-45) °C">
+                    </div>
+                 <div class="input-group">
+                     <label><span class="dot"></span> Humidity </label>
+                     <input type="text" placeholder="Input range: (10-100) %">
+                    </div>
+                    <div class="input-group">
+                     <label><span class="dot"></span> pH </label>
+                     <input type="text" placeholder="pH range: (3-9)">
+                         </div>
 
-                        <div class="input-group">
-                            <div class="select">
-                                <label><span class="dot"></span> Rainfall</label>
-                                <input type="text" placeholder="Input">
-                            </div>
-                        </div>
-                    </form>
+                    <div class="input-group">
+                             <div class="select">
+                             <label><span class="dot"></span> Rainfall </label>
+                      <input type="text" placeholder="Input range: (50-600) cm">
+                      </div>
+                             </div>
+                           </form>
+
                     <button class="btn-run full-width">Run</button><br><br>
 
                     <p>
@@ -96,16 +98,16 @@
 
                         <b>Potassium (K):</b>Improves plant health, disease resistance, and overall crop quality.<br>
 
-                        <b>pH Level:</b> Shows how acidic or alkaline the soil is. Different crops grow better in
+                        <b>pH Level :</b> Shows how acidic or alkaline the soil is. Different crops grow better in
                         different pH ranges.<br>
 
-                        <b>Rainfall:</b> The amount of water your field receives. It affects how well crops can
+                        <b>Rainfall :</b> The amount of water your field receives. It affects how well crops can
                         grow.<br>
 
-                        <b>Temperature:</b> The heat level in your area. Some crops prefer cool climates, others need
+                        <b>Temperature :</b> The heat level in your area. Some crops prefer cool climates, others need
                         warmer conditions.<br>
 
-                        <b>Humidity:</b> The moisture in the air. It influences plant growth and disease risk.<br>
+                        <b>Humidity :</b> The moisture in the air. It influences plant growth and disease risk.<br>
 
 
 
@@ -133,7 +135,7 @@
                             <div class="card task-card green-accent">
                                 <div class="task-icon"><i class="fa-solid fa-seedling"></i></div>
                                 <div class="task-info">
-                                    <h4>Crop Recommendation: Random Forest</h4>
+                                    <h4>Crop Recommendation</h4>
                                     <p>
                                         <b>Inputs:</b> Soil nutrients (N, P, K), pH, rainfall, temperature,
                                         humidity.<br>
@@ -142,7 +144,7 @@
                                         <b>Trained on</b>: Crop–soil data showing which crops grow best in different
                                         conditions.<br><br>
                                     </p>
-                                    <button class="btn-run-small">Learn More</button>
+                                    <a href="https://www.ibm.com/think/topics/random-forest"><button class="btn-run-small">Learn More</button></a>
                                 </div>
                             </div>
                             <div class="card task-card beige-accent">
@@ -157,7 +159,7 @@
                                         patterns.<br><br>
 
                                     </p>
-                                    <button class="btn-run-small">Learn More</button>
+                                    <a href="https://en.wikipedia.org/wiki/Autoregressive_integrated_moving_average"><button class="btn-run-small">Learn More</button></a>
                                 </div>
                             </div>
                         </div>

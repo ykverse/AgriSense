@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    display: fixed;
 }
 
 body {
@@ -29,6 +30,8 @@ body {
     overflow: hidden;
     /* Full screen app feel */
 }
+
+
 
 .container {
     display: flex;

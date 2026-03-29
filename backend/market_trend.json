@@ -2,4 +2,4 @@
  "Banana": {"direction": "UP", "percent_change": 8.74},
  "Ginger": {"direction": "UP", "percent_change": 17.46},
  "Pepper": {"direction": "STABLE", "percent_change": 4.11},
- "Tapioca": {"direction": "UP", "percent_change": 25.08}}
+ "Tapioca": {"direction": "UP", "percent_change": 5.08}}

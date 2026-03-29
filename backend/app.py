@@ -44,15 +44,19 @@ def index():
     return jsonify({"status": "ok", "message": "Smart Crop Recommendation API is running. Use POST /predict for inference."}), 200
 
 # VALID_RANGES: (min, max) for each agricultural feature
+
+
 VALID_RANGES = {
     'N': (0, 200),
     'P': (0, 200),
     'K': (0, 200),
     'temperature': (5, 45),
     'humidity': (10, 100),
-    'ph': (3.5, 9),
-    'rainfall': (0, 5000)
+    'ph': (3, 9),
+    'rainfall': (50, 600)
 }
+
+
 
 def validate_input(data):
     """
@@ -126,7 +130,10 @@ def predict():
             market_direction = market_info['direction']
             
             # Formula: final_score = suitability * (1 + market_percent / 100)
-            final_score = suitability_score * (1 + market_percent / 100)
+            # final_score = suitability_score * (1 + market_percent / 100)
+            final_score = (0.75 * suitability_score) + (0.5 * (market_percent * 5))
+
+            
             
             results.append({
                 "crop": crop_name,
