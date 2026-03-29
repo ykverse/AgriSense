@@ -20,7 +20,7 @@ Enter your soil parameters, get a ranked list of crops sorted by both how well t
 
 ## Video Demo
 
-[![Watch Demo](https://img.shields.io/badge/Watch%20Demo-%23FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtube.com/your-demo-link)
+(![Image](https://github.com/user-attachments/assets/5523fce5-e907-448f-90ae-d50a8572cf8b))
 
 ---
 
